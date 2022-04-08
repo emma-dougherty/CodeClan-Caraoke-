@@ -56,15 +56,12 @@ class TestRoom(unittest.TestCase):
         self.room2.check_out("Chikako Shiomi")
         self.assertEqual(0, len(self.room2.guests))
     
-    # def test_room_can_collect_entry_fee(self):
-    #     self.room1.check_in("Chikako Shiomi")
-    #     self.assertEqual(20, self.guest1.pay_fee())
-    #     self.assertEqual(110, self.room1.collect_fee())
+    def test_room_can_collect_entry_fee(self):
+        self.room1.check_in("Chikako Shiomi")
+        self.assertEqual(1, len(self.room1.guests))
+        self.assertEqual(0, len(self.room1.queue))
+        self.assertEqual(110, self.room1.till)
+        # self.assertEqual(20, self.guest1.wallet)
+
         
-    # def test_pub_cannot_serve_drink(self):
-    #     self.pub.add_drink(self.drink_1)
-    #     self.pub.add_drink(self.drink_2)
-    #     self.pub.serve(self.customer, self.drink_1)
-    #     self.assertEqual(8.00, self.customer.wallet)
-    #     self.assertEqual(102.00, self.pub.till)
-    #     self.assertEqual(1, self.pub.drink_count())
+    

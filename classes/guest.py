@@ -6,7 +6,10 @@ class Guest:
         self.favourite_song = input_favourite_song
 
     def pay_fee(self, room):
-        self.wallet -= room.fee
+        if self.wallet >= room.fee:
+            self.wallet -= room.fee
         return self.wallet
     
-    # def cheer()
+    # def cheer(self, room_playlist):
+    #     if self.favourite_song == room_playlist:
+    #         return "Woohoo! I love this song!"

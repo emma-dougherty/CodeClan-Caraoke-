@@ -24,18 +24,28 @@ class Room:
     def get_capacity(self):
         return self.capacity
 
+#This works
+    # def check_in(self, guest):
+    #     if len(self.guests) < self.capacity:
+    #         self.guests.append(guest)
+    #         self.till += self.fee
+    #     else: 
+    #         self.queue.append(guest)
+    #     return len(self.guests), len(self.queue), self.till
+
     def check_in(self, guest):
         if len(self.guests) < self.capacity:
             self.guests.append(guest)
+            self.till += self.fee
         else: 
             self.queue.append(guest)
-        return len(self.guests), len(self.queue)
+        return len(self.guests), len(self.queue), self.till
 
     def check_out(self, guest):
         self.guests.remove(guest)
         return len(self.guests)
-    
-    # def serve(self, customer, drink):
+
+    # def collect_fee(self, customer, drink):
     #     if self.drinks.count(drink) == 0:
     #         return
     #     self.drinks.remove(drink)
