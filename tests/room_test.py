@@ -73,3 +73,8 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(4, len(self.room1.guests))
         self.assertEqual(1, len(self.room1.queue))
         self.assertEqual(40, self.room1.till)
+    
+    def test_room_can_add_bar_drinks(self):
+        self.room1.add_drink(self.bar)
+        self.assertEqual(1, self.room1.drink_count())
+

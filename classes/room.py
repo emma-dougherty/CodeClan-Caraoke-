@@ -8,6 +8,7 @@ class Room:
         self.till = 0
         self.guests = []
         self.queue = []
+        self.bar = []
 
     def get_room_name(self):
         return self.name
@@ -36,7 +37,15 @@ class Room:
     def check_out(self, guest):
         self.guests.remove(guest)
         return len(self.guests)
-
+    
+    def add_drink(self, drink):
+        self.bar.append(drink)
+    
+    def drink_count(self):
+        return len(self.bar)
+    
+    def serve_drink(self):
+        self.till += self.price 
 
 # Attempt to also deduct from guest wallet
     # def check_in(self, guest, room):
