@@ -29,6 +29,7 @@ class Room:
         if len(self.guests) >= self.capacity:
             self.queue.append(guest)
         else:
+        
             self.guests.append(guest)
             self.till += self.fee
             len(self.guests)
@@ -47,14 +48,14 @@ class Room:
     def serve_drink(self):
         self.till += self.price 
 
-# Attempt to also deduct from guest wallet
-    # def check_in(self, guest, room):
-    #     if len(self.guests) >= self.capacity:
-    #         self.queue.append(guest)
-    #     else:
-    #         self.guests.append(guest)
-    #         guest.pay_fee(room)  #### pay_fee not recognised ####
-    #         self.till += self.fee
-    #         len(self.guests)
-    #         len(self.queue)
+
+    def check_in(self, guest, room):
+        if len(self.guests) >= self.capacity:
+            self.queue.append(guest)
+        else:
+            self.guests.append(guest)
+            guest.pay_fee(room)  
+            self.till += self.fee
+            len(self.guests)
+            len(self.queue)
 
